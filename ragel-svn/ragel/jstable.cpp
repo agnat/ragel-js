@@ -241,9 +241,9 @@ void JSTabCodeGen::writeExec()
 {
 	out << 
 		"{\n"
-		"	var _klen, _trans, _keys, _ps, _widec, _acts, _nacts;\n"
-		"	var _goto_level, _resume, _eof_trans, _again, _test_eof;\n"
-		"	var _out;\n"
+		"	var _klen, _trans, _keys, _ps, _widec, _acts, _nacts,\n"
+		"	    _goto_level, _resume, _eof_trans, _again, _test_eof,\n"
+		"	    _out, _trigger_goto, _lower, _upper, _mid, _break_match;\n"
 		"	_klen = _trans = _keys";
 
 	if ( redFsm->anyRegCurStateRef() )
