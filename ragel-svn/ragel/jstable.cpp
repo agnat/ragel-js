@@ -165,9 +165,12 @@ void JSTabCodeGen::COND_TRANSLATE()
 
 		for ( GenCondSet::Iter csi = condSpace->condSet; csi.lte(); csi++ ) {
 			Size condValOffset = ((1 << csi.pos()) * keyOps->alphSize());
-			out << "	_widec += " << condValOffset << " if ( ";
+			out << "if ( ";
 			CONDITION( out, *csi );
-			out << " ) {\n";
+			out << " ) {\n"
+                << "	_widec += " << condValOffset << ";\n"
+                << "}\n"
+                << "break;\n";
 		}
 	}
 
