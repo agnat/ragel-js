@@ -301,7 +301,7 @@ void JSTabCodeGen::writeExec()
 			"		switch (" << A() << "[_acts - 1]) {\n";
 		FROM_STATE_ACTION_SWITCH();
 		out <<
-			"		} # from state action switch\n"
+			"		} // from state action switch\n"
 			"	}\n"
 			"	if (_trigger_goto) {\n"
 			"		continue;\n"
@@ -363,7 +363,7 @@ void JSTabCodeGen::writeExec()
 			"		switch (" << A() << "[_acts - 1]) {\n";
 		TO_STATE_ACTION_SWITCH();
 		out <<
-			"		} # to state action switch\n"
+			"		} // to state action switch\n"
 			"	}\n"
 			"	if (_trigger_goto) {\n"
 			"		continue;\n"
