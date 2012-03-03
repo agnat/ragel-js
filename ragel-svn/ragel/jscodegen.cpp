@@ -600,7 +600,7 @@ void JSCodeGen::LM_SWITCH( ostream &ret, GenInlineItem *item,
 		/* Write the block and close it off. */
 		ret << "        {";
 		INLINE_LIST( ret, lma->children, targState, inFinish );
-		ret << "}\n /*break?*/ \n";
+		ret << "}\n break; \n";
 	}
 
 	ret << "} \n\t";
